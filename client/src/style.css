@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: sans-serif;
+    --padding: 5px;
+}
+
+body {
+    background: rgb(201, 129, 141);
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+:root, body, #root, h1, h2, h3, p, span, div, figure {
+    margin: 0;
+}
+
+div, h1, h2, h3, p {
+    padding: var(--padding);
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    background: rgb(241, 207, 207);
+}
+
+.profileIconWrapper {
+    display: flex;
+    justify-content:center;
+}
+
+.profileIcon {
+    cursor: pointer;
+    width: 2em;
+    border-radius: 50%;
+}
+
+span, nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav {
+    background:rgb(201, 129, 141);
+}
+
+#searchbar {
+    background:rgb(170, 107, 118);
+    border: none;
+    color: black;
+}
+
+#searchbar::placeholder {
+    color: black;
+    font-style: italic;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+.flex-3 {
+    flex: 3;
+}
+
+#vid {
+    flex: 1;
+    background: rgb(201, 129, 141);
+}
+
+#mainvid {
+    width: 400px;
+}
