@@ -17,7 +17,7 @@ body {
     min-height: 100vh;
 }
 
-:root, body, #root, h1, h2, h3, p, span, div, figure {
+:root, body, #root, h1, h2, h3, p, span, div, figure, aside {
     margin: 0;
 }
 
@@ -95,6 +95,10 @@ nav {
     font-style: italic;
 }
 
+.row {
+    display: flex;
+}
+
 .flex-1 {
     flex: 1;
 }
@@ -113,5 +117,5 @@ nav {
 }
 
 #mainvid {
-    width: 400px;
+    width: 100%;
 }
