@@ -2,6 +2,18 @@
     box-sizing: border-box;
 }
 
+@keyframes fadein {
+    from {
+        display: block;
+        opacity: 0;
+        transform: translateY(10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
 :root {
     font-family: sans-serif;
     --padding: 5px;
@@ -46,7 +58,6 @@ div, h1, h2, h3, p {
     border: 1px solid black;
     border-radius: 50%;
     cursor: pointer;
-    margin-top: -14px;
     box-shadow: 1px 1px 1px black,0px 0px 1px #0d0d0d;
 }
 
@@ -112,10 +123,22 @@ nav {
 }
 
 #player {
+    position: relative;
     flex: 1;
+    width: 400px;
     background: rgb(201, 129, 141);
 }
 
 #mainvid {
+    cursor: pointer;
     width: 100%;
+}
+
+#mainvid:hover + #controls {
+    display: block;
+}
+
+#controls {
+    animation: .15s fadein;
+    display: none;
 }
