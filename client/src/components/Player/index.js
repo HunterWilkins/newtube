@@ -19,11 +19,11 @@ const Player = () => {
     }
 
     return (
-        <div id = "player" onMouseEnter={() => setControlVisibility(true)} >
+        <div id = "player"  onMouseEnter={() => setControlVisibility(true)} >
             <video onClick = {togglePlay} muted onTimeUpdate = {() => setTime(playerRef.current.currentTime)} ref = {playerRef} id = "mainvid">
                 <source src = {require("../../assets/videos/Wheat Crunchies.mov").default} type = "video/mp4"/>
             </video>
-            <section id = "controls" style = {{display: controlVisibility ? "block" : "none"}}>
+            <section onClick = {togglePlay} id = "controls" style = {{display: controlVisibility ? "block" : "none"}}>
                 <button onClick = {togglePlay}>PAUSE</button>
                 <Progress time = {time} playerRef = {playerRef} onTimeChange = {(newTime) => updateTime(newTime)}/>
             </section>

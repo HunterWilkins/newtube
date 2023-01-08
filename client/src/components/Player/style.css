@@ -63,4 +63,5 @@
     left: 0;
     background: pink;
     width: 100%;
+    z-index: 10;
 }

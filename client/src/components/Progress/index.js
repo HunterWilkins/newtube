@@ -22,7 +22,7 @@ const Progress = ({time, playerRef, onTimeChange}) => {
     }
 
     return (
-        <div id = "progressbar">
+        <div id = "progressbar" onClick = {(event) => {event.preventDefault(); event.stopPropagation();}}>
             <p>{cleanUpSeconds(time)} / {playerRef ? cleanUpSeconds(playerRef?.current?.duration) : 0}</p>
             <span style = {{position: "relative", display: "flex"}}>
                 <input id = "duration" type = "range" onChange = {(event) => onTimeChange(event.target.value)} value = {time} min = "0" max = {playerRef ? cleanUpSeconds(playerRef?.current?.duration) : 0}/>
