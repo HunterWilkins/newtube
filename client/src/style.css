@@ -44,36 +44,6 @@ div, h1, h2, h3, p {
     background: rgb(241, 207, 207);
 }
 
-#duration, #duration::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    background: transparent;
-}
-#duration {
-    background: black;
-}
-
-#duration::-webkit-slider-thumb {
-    width: 20px;
-    height: 20px;
-    border: 1px solid black;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 1px 1px 1px black,0px 0px 1px #0d0d0d;
-}
-
-#duration:focus {
-    outline: none;
-}
-
-#duration::-ms-track {
-    cursor: pointer;
-
-    width: 100%;
-    height:100%;
-    background: white;
-    color: black;
-} 
-
 
 .profileIconWrapper {
     display: flex;
@@ -122,23 +92,15 @@ nav {
     flex: 3;
 }
 
-#player {
-    position: relative;
+main {
     flex: 1;
+    display: flex;
+}
+
+aside {
     width: 400px;
-    background: rgb(201, 129, 141);
 }
 
-#mainvid {
+button {
     cursor: pointer;
-    width: 100%;
-}
-
-#mainvid:hover + #controls {
-    display: block;
-}
-
-#controls {
-    animation: .15s fadein;
-    display: none;
 }
