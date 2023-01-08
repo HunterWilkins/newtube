@@ -1,7 +1,18 @@
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
 #controls {
     /* animation: .15s fadein; */
     display: none;
     position: absolute;
+    justify-content: center;
     top: 0;
     left: 0;
     right: 0;
@@ -47,6 +58,15 @@
 #mainvid {
     cursor: pointer;
     width: 100%;
+}
+
+#pause-overlay, #play-overlay {
+    animation: fade 1s;
+    height: 50px;
+    width: 50px;
+
+    align-self: center;
+    animation-fill-mode: forwards;
 }
 
 #player {

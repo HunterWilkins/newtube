@@ -18,13 +18,25 @@ const Player = () => {
         }
     }
 
+    const [playIconVisibility, setPlayIconVisibility] = useState("play");
+
+    const togglePlayIcons = () => {
+        if (!playerRef.current.paused) {
+            setPlayIconVisibility("paused");
+        }
+        else {
+            setPlayIconVisibility("play");
+        }
+    }
+
     return (
-        <div id = "player"  onMouseEnter={() => setControlVisibility(true)} >
+        <div id = "player"  onMouseEnter={() => setControlVisibility(true)} onMouseLeave={() => {setControlVisibility(false); setPlayIconVisibility(null)}}>
             <video onClick = {togglePlay} muted onTimeUpdate = {() => setTime(playerRef.current.currentTime)} ref = {playerRef} id = "mainvid">
                 <source src = {require("../../assets/videos/Wheat Crunchies.mov").default} type = "video/mp4"/>
             </video>
-            <section onClick = {togglePlay} id = "controls" style = {{display: controlVisibility ? "block" : "none"}}>
-                <button onClick = {togglePlay}>PAUSE</button>
+            <section onClick = {() => {togglePlay(); togglePlayIcons()}} id = "controls" style = {{display: controlVisibility ? "flex" : "none"}}>
+                <img id = "pause-overlay" style = {{display: playIconVisibility === "paused" || !playIconVisibility ? "none" : "block"}} src = {require("../../assets/images/pause placeholder.png").default} />
+                <img id = "play-overlay" style = {{display: playIconVisibility  === "play" || !playIconVisibility ? "none" : "block"}} src = {require("../../assets/images/play placeholder.png").default} />
                 <Progress time = {time} playerRef = {playerRef} onTimeChange = {(newTime) => updateTime(newTime)}/>
             </section>
         </div>
